@@ -6,4 +6,9 @@ public record BookPagesCount(int value) {
             throw new IllegalArgumentException("Pages count should be non-negative");
         }
     }
+
+    @Override
+    public String toString() {
+        return String.valueOf(value);
+    }
 }
