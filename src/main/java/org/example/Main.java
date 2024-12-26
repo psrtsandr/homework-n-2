@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         List<Student> students = StudentMockRepository.getStudents();
         students.stream()
-                .peek(s -> System.out.printf("%s\nStudent's books:\n%s%n\n",
+                .peek(s -> System.out.printf("Peek %s\nPeek Student's books:\n%s%n\n",
                         s,
                         s.getBooks().stream()
                                 .sorted(Comparator.comparing(Book::publicationYear))
@@ -18,9 +18,9 @@ public class Main {
                 .sorted(Comparator.comparing(Book::pagesCount))
                 .distinct()
                 .filter(b -> b.publicationYear().value() > 2000)
-                .mapToInt(b -> b.publicationYear().value())
                 .limit(3)
+                .peek(b -> System.out.printf("Peek book publication year: %s\n", b.publicationYear()))
                 .findFirst()
-                .ifPresentOrElse(y -> System.out.printf("Found book publication year: %d\n", y), () -> System.out.println("Book not found"));
+                .ifPresentOrElse(b -> System.out.printf("Found book publication year: %s\n", b.publicationYear()), () -> System.out.println("Book not found"));
     }
 }
