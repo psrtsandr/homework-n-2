@@ -21,6 +21,8 @@ public class Main {
                 .limit(3)
                 .peek(b -> System.out.printf("Peek book publication year: %s\n", b.publicationYear()))
                 .findFirst()
-                .ifPresentOrElse(b -> System.out.printf("Found book publication year: %s\n", b.publicationYear()), () -> System.out.println("Book not found"));
+                .ifPresentOrElse(
+                        b -> System.out.printf("Found book publication year: %s\n", b.publicationYear()),
+                        () -> System.out.println("Book not found"));
     }
 }
