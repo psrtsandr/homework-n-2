@@ -33,7 +33,7 @@ public class BookTest {
 
     @Test
     public void testToString() {
-        var expected = "Book (Title: %1$s, Author: %2$s, Publication year: %3$s, Pages count: %4$s"
+        var expected = "Book (Title: %1$s, Author: %2$s, Publication year: %3$s, Pages count: %4$s)"
                 .formatted(bookTitle, bookAuthor, bookPublicationYear, bookPagesCount);
         var actual = new Book(bookTitle, bookAuthor, bookPublicationYear, bookPagesCount).toString();
         assertEquals(expected, actual);

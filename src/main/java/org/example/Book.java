@@ -20,7 +20,7 @@ public record Book(BookTitle title, BookAuthor author, BookPublicationYear publi
 
     @Override
     public String toString() {
-        return "Book (Title: %1$s, Author: %2$s, Publication year: %3$s, Pages count: %4$s"
+        return "Book (Title: %1$s, Author: %2$s, Publication year: %3$s, Pages count: %4$s)"
                 .formatted(title, author, publicationYear, pagesCount);
     }
 
